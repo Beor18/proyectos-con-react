@@ -17,6 +17,14 @@ export default {
                 };
             }
 
+            case "ADD_JOKE": {
+                return {
+                ...state,
+                list: state.list.concat(action.payload),
+                status: "init"
+                };
+             }
+
             case "DELETE_JOKE": {
                 return {
                     ...state,

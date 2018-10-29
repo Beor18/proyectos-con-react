@@ -1,6 +1,6 @@
 import React from "react";
 
-import JokesManager from ".modules/joke/components/JokesManager";
+import JokesManager from "./modules/joke/components/JokesManager";
 
 const App = () => (
   <div>
