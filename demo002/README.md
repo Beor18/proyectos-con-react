@@ -1,3 +1,3 @@
 ## Demo002
 
-Practicas con react
+Practicas con React y Socket.io
