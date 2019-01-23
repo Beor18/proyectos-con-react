@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NuevoPost from './components/NuevoPost';
+import CrearPost from './containers/crearPost';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
@@ -9,7 +9,7 @@ class App extends Component {
       <div className="container" style={{marginTop: '30px'}}>
         <div className="row">
           <div className="col-md-6">
-            <NuevoPost />
+            <CreatePost />
           </div>
           <div className="col-md-6">
             Todos las Notas
