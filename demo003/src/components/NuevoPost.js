@@ -36,7 +36,7 @@ class NuevoPost extends React.Component {
                 type="text"
                 placeholder="Titulo"
                 className="form-control"
-                name="title"
+                name="titulo"
                 onChange={ this.handleInputChange }
                 value={ this.state.titulo }
               />

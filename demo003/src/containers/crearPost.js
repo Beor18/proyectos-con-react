@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { crearNota } from '../actions';
-import { NuevoPost } from '../components/NuevoPost';
+import NuevoPost  from '../components/NuevoPost';
 
 // Se ha conectado el componente NuevoPost a la store Redux.
 

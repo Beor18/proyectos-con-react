@@ -2,7 +2,7 @@
 
 import { AGREGAR_NOTA, BORRAR_NOTA } from '../actions/types';
 
-export default function postReducer(state = [], actions) {
+export default function postReducer(state = [], action) {
     switch (action.type) {
         case AGREGAR_NOTA:
             return [...state, action.payload];
