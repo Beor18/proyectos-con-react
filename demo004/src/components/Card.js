@@ -13,7 +13,8 @@ const styles = {
   card: {
     maxWidth: 345,
     marginTop: '20px',
-    marginLeft: '20px'
+    marginLeft: '20px',
+    marginRight: '20px'
   },
   media: {
     height: 140,
