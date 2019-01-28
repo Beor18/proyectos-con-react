@@ -10,16 +10,16 @@ class App extends Component {
       <div>
         <Navbar/>
         <Grid container>
-          <Grid item xs={3}>
+          <Grid item md={3}>
             <MediaCard />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item md={3}>
             <MediaCard />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item md={3}>
             <MediaCard />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item md={3}>
             <MediaCard />
           </Grid>
         </Grid>
