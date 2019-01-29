@@ -1,5 +1,9 @@
 import React from 'react'
-import { Editor, EditorState, RichUtils } from "draft-js";
+import { EditorState, RichUtils } from "draft-js"
+import Editor from "draft-js-plugins-editor"
+import createHighlightPlugin from './plugins/highlightPlugin'
+
+const highlightPlugin = createHighlightPlugin();
 
 class PageContainer extends React.Component {
     constructor(props) {
@@ -7,6 +11,8 @@ class PageContainer extends React.Component {
         this.state = {
             editorState: EditorState.createEmpty(),
         };
+
+        this.plugins = [highlightPlugin];
     }
 
     onChange = (editorState) => {
@@ -37,20 +43,37 @@ class PageContainer extends React.Component {
         this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'ITALIC'))
     }
 
+    onHighlight = () => {
+        this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'HIGHLIGHT'))
+    }
+
     render() {
         return (
             <div className="editorContainer">
-                <button onClick={this.onUnderlineClick}>U</button>
-                <button onClick={this.onBoldClick}><b>B</b></button>
-                <button onClick={this.onItalicClick}><em>I</em></button>  
-                <div className="editors">
-                    <Editor
-                        editorState={this.state.editorState}
-                        handleKeyCommand={this.handleKeyCommand}
-                        onChange={this.onChange}
-                    />
-                </div>
-            </div>
+				<button className="underline" onClick={this.onUnderlineClick}>
+					U
+				</button>
+				<button className="bold" onClick={this.onBoldClick}>
+					<b>B</b>
+				</button>
+				<button className="italic" onClick={this.onItalicClick}>
+					<em>I</em>
+				</button>
+				<button className="strikethrough" onClick={this.onStrikeThroughClick}>
+					abc
+				</button>
+				<button className="highlight" onClick={this.onHighlight}>
+					<span style={{ background: "yellow", padding: "0.3em" }}>H</span>
+				</button>
+				<div className="editors">
+					<Editor
+						editorState={this.state.editorState}
+						handleKeyCommand={this.handleKeyCommand}
+						plugins={this.plugins}
+						onChange={this.onChange}
+					/>
+				</div>
+			</div>
         )
     }
 }
