@@ -25,9 +25,24 @@ class PageContainer extends React.Component {
         return 'no handled';
     }
 
+    onUnderlineClick = () => {
+        this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'UNDERLINE'));
+    }
+
+    onBoldClick = () => {
+        this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'BOLD'))
+    }
+    
+    onItalicClick = () => {
+        this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'ITALIC'))
+    }
+
     render() {
         return (
             <div className="editorContainer">
+                <button onClick={this.onUnderlineClick}>U</button>
+                <button onClick={this.onBoldClick}><b>B</b></button>
+                <button onClick={this.onItalicClick}><em>I</em></button>  
                 <div className="editors">
                     <Editor
                         editorState={this.state.editorState}
