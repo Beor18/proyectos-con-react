@@ -7,3 +7,5 @@
 - [Demo03](https://github.com/Beor18/proyectos-con-react/tree/master/demo003) - Lista de notas con redux
 
 - [Demo04](https://github.com/Beor18/proyectos-con-react/tree/master/demo004) - Probando Material UI
+
+- [Demo05](https://github.com/Beor18/proyectos-con-react/tree/master/demo005) - Texto Enriquecido con Draft.js
