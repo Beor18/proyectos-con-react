@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "draft-js": "^0.10.5",
+    "draft-js-plugins-editor": "^2.1.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.3"
