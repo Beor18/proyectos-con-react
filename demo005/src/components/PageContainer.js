@@ -3,6 +3,8 @@ import { EditorState, RichUtils } from "draft-js"
 import Editor from "draft-js-plugins-editor"
 import createHighlightPlugin from './plugins/highlightPlugin'
 
+import BlockStyleToolbar, { getBlockStyle } from "./blockStyles/BlockStyleToolbar";
+
 const highlightPlugin = createHighlightPlugin();
 
 class PageContainer extends React.Component {
@@ -47,9 +49,17 @@ class PageContainer extends React.Component {
         this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'HIGHLIGHT'))
     }
 
+    toggleBlockType = (blockType) => {
+        this.onChange(RichUtils.toggleBlockType(this.state.editorState, blockType));
+    }
+
     render() {
         return (
             <div className="editorContainer">
+                <BlockStyleToolbar
+                    editorState={this.state.editorState}
+                    onToggle={this.toggleBlockType}
+                />
 				<button className="underline" onClick={this.onUnderlineClick}>
 					U
 				</button>
@@ -67,6 +77,7 @@ class PageContainer extends React.Component {
 				</button>
 				<div className="editors">
 					<Editor
+                        blockStyleFn={getBlockStyle}
 						editorState={this.state.editorState}
 						handleKeyCommand={this.handleKeyCommand}
 						plugins={this.plugins}
