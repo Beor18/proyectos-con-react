@@ -1,5 +1,4 @@
 import React from "react";
-import { EditorState, Editor, RichUtils, AtomicBlockUtils } from "draft-js";
 import BlockStyleButton from "./BlockStyleButton";
 import HeaderStyleDropdown from "./HeaderStyleDropdown";
 
@@ -13,7 +12,7 @@ export const BLOCK_TYPES = [
 ];
 
 export const HEADER_TYPES = [
-	{ label: "(None)", style: "unstyled" },
+	{ label: "(Sin Estilo)", style: "unstyled" },
 	{ label: "H1", style: "header-one" },
 	{ label: "H2", style: "header-two" },
 	{ label: "H3", style: "header-three" },

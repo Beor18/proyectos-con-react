@@ -1,59 +1,21 @@
+html {
+    background: linear-gradient(to bottom, #3e3e3e 50%, #16222a);
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
 .App {
     text-align: center;
 }
 
-.App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 80px;
-}
-
-.App-header {
-    background-color: #222;
-    height: 150px;
-    padding: 20px;
-    color: white;
-}
-
-.App-title {
-    font-size: 1.5em;
-}
-
-.App-intro {
-    font-size: large;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.editorContainer {
-    padding: 1em;
-    margin: 1em;
-}
-
-.editors {
-    border: 1px transparent solid;
-    padding: 1.5em 2em 2.75em 2em;
-    margin: 1.25em;
-    font-family: "Didot";
-    font-size: 1.2em;
-    border-radius: 6px;
-    text-align: left;
-    line-height: 1.5em;
-}
-
 button {
-    border-radius: 2px;
+    border: none;
+    border-radius: 8px;
     margin: 0.25em;
     width: 2.3em;
     font-family: "Times";
     line-height: 200%;
-    border-radius: 3px;
     background-color: #efefef;
 }
 
@@ -74,13 +36,76 @@ button.underline {
     font-size: 1em;
 }
 
-html {
-    background: linear-gradient(to bottom, #3e3e3e 50%, #16222a);
-    height: 100%;
-    position: relative;
-    width: 100%;
+.editorContainer {
+    padding: 1em;
+    margin: 1em;
 }
 
 .editors {
-    background-color: white;
+    text-align: left;
+    border: none;
+    padding: 2em;
+    border-radius: 8px;
+    margin: 2em;
+    font-family: "Open Sans";
+    font-size: 100%;
+    background-image: linear-gradient(to bottom, #fdfbfb 0%, #f6f7fb 100%);
+}
+
+.RichEditor-activeButton {
+    background-color: #feb47b;
+    color: white;
+}
+
+select {
+    padding: 0.5em;
+    border: none;
+    margin: 0.35em;
+    border-radius: 6px;
+    font-family: "Open Sans";
+    font-size: 13px;
+    height: 2.25em;
+}
+
+button,
+select {
+    background-image: linear-gradient(to bottom, #fdfbfb 0%, #ebedee 100%);
+    padding: 3px;
+}
+
+.styleButton#bold {
+    font-weight: bold;
+}
+
+.styleButton#italic {
+    font-style: italic;
+    font-family: serif;
+}
+
+.styleButton#underline {
+    text-decoration: underline;
+}
+
+.toolbar {
+    text-align: center;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+.styleButton,
+.RichEditor-styleButton {
+    padding: 0.5em;
+    background-image: linear-gradient(to bottom, #fdfbfb 0%, #ebedee 100%);
+    border: none;
+    margin: 0.35em;
+    width: 2.75em;
+    font-family: "Open Sans";
+    font-size: 13px;
+    height: 2.25em;
+    border-radius: 4px;
+}
+
+.RichEditor-activeButton {
+    background-color: #feb47b;
+    color: white;
 }
