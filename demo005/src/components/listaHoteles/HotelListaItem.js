@@ -7,7 +7,7 @@ class HotelListaItem extends React.Component {
   render() {
     return(
       this.props.nota.map((key) =>{
-        return <div key={this.props.nota.id} className="note-list-item" onClick={this.props.selectNote}>
+        return <div key={key.id} className="note-list-item" onClick={this.props.selectNote}>
         {key.title}
       </div>
       })

@@ -12,7 +12,7 @@ class HeaderStyleDropdown extends React.Component {
 		return (
 			<select value={this.props.active} onChange={this.onToggle}>
 				{this.props.headerOptions.map(heading => {
-					return <option value={heading.style}>{heading.label}</option>;
+					return <option key={heading.style} value={heading.style}>{heading.label}</option>;
 				})}
 			</select>
 		);
