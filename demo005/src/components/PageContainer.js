@@ -1,7 +1,11 @@
 import React from 'react'
-import { EditorState, RichUtils } from "draft-js"
+import { EditorState, RichUtils, convertToRaw, convertFromRaw } from "draft-js"
 import Editor from "draft-js-plugins-editor"
 import createHighlightPlugin from './plugins/highlightPlugin'
+
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as Actions from '../actions'
 
 import BlockStyleToolbar, { getBlockStyle } from "./blockStyles/BlockStyleToolbar";
 
@@ -53,9 +57,58 @@ class PageContainer extends React.Component {
         this.onChange(RichUtils.toggleBlockType(this.state.editorState, blockType));
     }
 
+    componentDidMount() {
+        let displayedNote = this.props.displayedNote
+        if (typeof displayedNote == "object") {
+          //let rawContentFromFile = displayedNote
+          this.setState({
+            editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.displayedNote.content)), this.decorator())
+          })
+        } else {
+          this.setState({
+            noteTitle: "",
+            
+          })
+        }
+    }
+
+
+    submitEditor = () => {
+        let displayedNote = this.props.displayedNote
+        let contentState = this.state.editorState.getCurrentContent()
+        let note = {title: this.state.noteTitle, content: convertToRaw(contentState)}
+        if (this.state.noteTitle === "" || (note.content.blocks.length <= 1 && note.content.blocks[0].depth === 0 && note.content.blocks[0].text === "")) {
+          alert("El titulo o el cuerpo no tiene que estar en blanco!")
+        } else {
+          note["content"] = JSON.stringify(note.content)
+          this.setState({
+            noteTitle: "",
+            editorState: EditorState.createEmpty()
+          }, () => displayedNote === "new" ? this.props.crearNota(note.title, note.content) : this.props.updateNote(displayedNote.id, note.title, note.content))
+        }
+    }
+
+    captureTitle = (event) => {
+        event.preventDefault()
+        let value = event.target.value
+        this.setState({
+          noteTitle: value
+        })
+    }
+
     render() {
         return (
             <div className="editorContainer">
+
+            <div className="aboveEditor">
+                <span className="noteTitle">
+                    <input type="text" placeholder="Nombre del Hotel" name="noteTitle" className="noteTitle" value={this.state.noteTitle} onChange={this.captureTitle}/>
+                </span>
+                <button className="submitNote" onClick={this.submitEditor}>
+                        Guardar
+                </button>
+            </div>
+
                 <BlockStyleToolbar
                     editorState={this.state.editorState}
                     onToggle={this.toggleBlockType}
@@ -89,4 +142,14 @@ class PageContainer extends React.Component {
     }
 }
 
-export default PageContainer
+function mapStateToProps(state, props) {
+    return {
+      nota: state.nota.hotels,
+    }
+  }
+  
+  function mapDispatchToProps(dispatch) {
+    return bindActionCreators(Actions, dispatch);
+  }
+  
+export default connect(mapStateToProps, mapDispatchToProps)(PageContainer)
