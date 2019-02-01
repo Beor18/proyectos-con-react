@@ -4,7 +4,7 @@ export const CREAR_NOTA = "CREAR_NOTA";
 
 export function cargarNota() {
     return dispatch => {
-        fetch("https://almundo-examen.herokuapp.com/api/hoteles")
+        fetch("../../datosFake/datosFake.json")
         .then(response => response.json())
         .then(json => dispatch({
             type: CARGAR_NOTA, 
@@ -13,16 +13,16 @@ export function cargarNota() {
     )}
 }
 
-export function crearNota(notaNombre, price) {
+export function crearNota(noteTitle, noteContent) {
     return dispatch => {
-        fetch("https://almundo-examen.herokuapp.com/api/hoteles", {
+        fetch("../../datosFake/datosFake.json", {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
                 'Accepts': 'application/json'
             }, body: JSON.stringify({
-                name: notaNombre,
-                price: price
+                title: noteTitle,
+                content: noteContent
             })
         })
         .then(response => response.json())
