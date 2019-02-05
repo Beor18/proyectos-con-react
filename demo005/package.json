@@ -5,6 +5,7 @@
   "dependencies": {
     "draft-js": "^0.10.5",
     "draft-js-plugins-editor": "^2.1.1",
+    "moment": "^2.24.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-redux": "^6.0.0",
