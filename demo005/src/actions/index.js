@@ -4,18 +4,18 @@ export const CREAR_NOTA = "CREAR_NOTA";
 
 export function cargarNota() {
     return dispatch => {
-        fetch("../../datosFake/datosFake.json")
+        fetch("http://localhost:5000/api/productos")
         .then(response => response.json())
         .then(json => dispatch({
             type: CARGAR_NOTA, 
-            payload: json
+            payload: json.p
         })
     )}
 }
 
 export function crearNota(noteTitle, noteContent) {
     return dispatch => {
-        fetch("../../datosFake/datosFake.json", {
+        fetch("http://localhost:5000/api/productos", {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ export function crearNota(noteTitle, noteContent) {
         .then(json => {
             dispatch({
                 type: CREAR_NOTA,
-                hotels: json
+                p: json
             })
         })
     }
