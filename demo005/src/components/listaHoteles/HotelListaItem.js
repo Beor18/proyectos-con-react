@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as Actions from '../../actions';
 import moment from 'moment';
+require('moment/locale/es');
 
 class HotelListaItem extends React.Component {
   render() {
@@ -10,7 +11,7 @@ class HotelListaItem extends React.Component {
       this.props.nota.map((key) =>{
         return <div key={key.id} className="note-list-item" onClick={this.props.selectNote}>
         {key.title}
-        <p>{moment(key.created_at).fromNow()}</p>
+        <p>{moment(key.created_at).locale('es').fromNow()}</p>
       </div>
       })
     )
