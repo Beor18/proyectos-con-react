@@ -8,10 +8,11 @@ require('moment/locale/es');
 class HotelListaItem extends React.Component {
   render() {
     return(
-      this.props.nota.map((key) =>{
-        return <div key={key.id} className="note-list-item" onClick={this.props.selectNote}>
-        {key.title}
-        <p>{moment(key.created_at).locale('es').fromNow()}</p>
+      this.props.nota.map((lista, i) =>{
+        return <div key={i} className="note-list-item" onClick={this.props.selectNote}>
+        <p>{lista.title}</p>
+        <p>{lista.content}</p>
+        <p>{moment(lista.created_at).locale('es').fromNow()}</p>
       </div>
       })
     )
