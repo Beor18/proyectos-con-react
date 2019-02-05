@@ -1,7 +1,8 @@
 import React from 'react'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as Actions from '../../actions'
+import * as Actions from '../../actions';
+import moment from 'moment';
 
 class HotelListaItem extends React.Component {
   render() {
@@ -9,6 +10,7 @@ class HotelListaItem extends React.Component {
       this.props.nota.map((key) =>{
         return <div key={key.id} className="note-list-item" onClick={this.props.selectNote}>
         {key.title}
+        <p>{moment(key.created_at).fromNow()}</p>
       </div>
       })
     )
