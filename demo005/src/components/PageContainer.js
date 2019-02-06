@@ -84,7 +84,7 @@ class PageContainer extends React.Component {
           this.setState({
             noteTitle: "",
             editorState: EditorState.createEmpty()
-          }, () => displayedNote === "new" ? this.props.crearNota(note.title, note.content) : this.props.updateNote(displayedNote.id, note.title, note.content))
+          }, () => displayedNote === "new" ? this.props.crearNota(note.title, note.content) : this.props.updateNote(displayedNote._id, note.title, note.content))
         }
     }
 
