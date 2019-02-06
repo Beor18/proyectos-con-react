@@ -6,16 +6,35 @@ import moment from 'moment';
 require('moment/locale/es');
 
 class HotelListaItem extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+        actualizarTiempo :  moment(this.props.lista.created_at).locale('es').fromNow()}
+  }
+
+  componentDidMount(){
+    // agregado el interval
+    this.interval = setInterval(this.updateActualizarTiempo.bind(this), 3000);
+  }
+
+  componentWillUnmount(){
+    // remover el interval
+    clearInterval(this.interval);
+  }
+
+  updateActualizarTiempo(){
+    this.setState({
+      actualizarTiempo : moment(this.props.lista.created_at).locale('es').fromNow()})
+  }
+    
   render() {
-    console.log(this.props.nota);
     return(
-      this.props.nota.map((lista) =>{
-        return <div key={lista._id} className="note-list-item" onClick={this.props.selectNote}>
-        <p>{lista.title}</p>
-        <p>{lista.content}</p>
-        <p>{moment(lista.created_at).locale('es').fromNow()}</p>
+      <div key={this.props.lista._id} className="note-list-item" onClick={this.props.selectNote}>
+        <p>{this.props.lista.title}</p>
+        <p>{this.props.lista.content}</p>
+        <p>{this.state.actualizarTiempo}</p>
       </div>
-      })
+
     )
   }
 }
