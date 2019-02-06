@@ -10,13 +10,22 @@ class HotelListaContainer extends React.Component {
         this.props.cargarNota()
       }
 
+      componentDidUpdate(prevProps, prevState) {
+        if (prevProps !== this.props) {
+          this.listAllNotes();
+        }
+      }
+  
+    listAllNotes = () => {
+      return this.props.nota.sort((a,b) => parseInt(a.id) - parseInt(b.id)).map((lista) => {
+        return <HotelListaItem key={lista._id} lista={lista}/>
+      })
+    }
+  
     render() {
         return (
-            <div className="noteListContainer">
-                <h2 className="tituloNotas">Toda las Notas</h2>
-                <div className="note-list">
-                    <HotelListaItem />
-                </div>
+            <div className="note-list">
+                {this.listAllNotes()}
             </div>
         )}
 }
