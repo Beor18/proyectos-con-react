@@ -17,6 +17,7 @@ class HotelListaContainer extends React.Component {
       }
   
     listAllNotes = () => {
+      console.log(this.props.nota);
       return this.props.nota.sort((a,b) => parseInt(a.id) - parseInt(b.id)).map((lista, index) => {
         return <HotelListaItem key={index} lista={lista}/>
       })

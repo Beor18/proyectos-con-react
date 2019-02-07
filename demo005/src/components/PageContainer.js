@@ -58,10 +58,11 @@ class PageContainer extends React.Component {
     }
 
     componentDidMount() {
-        let displayedNote = this.props.displayedNote
+        let displayedNote = this.props.nota.p
         if (typeof displayedNote == "object") {
           //let rawContentFromFile = displayedNote
           this.setState({
+            displayedNote: this.props.nota._id,
             editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.displayedNote.content)), this.decorator())
           })
         } else {
@@ -72,9 +73,17 @@ class PageContainer extends React.Component {
         }
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.nota == null && !!this.props.nota) {
+         this.setState({
+          displayedNote: this.props.nota._id,
+          editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.nota.content)))
+         })
+        }
+    }
 
     submitEditor = () => {
-        let displayedNote = this.props.displayedNote
+        let displayedNote = this.props.nota
         let contentState = this.state.editorState.getCurrentContent()
         let note = {title: this.state.noteTitle, content: convertToRaw(contentState)}
         if (this.state.noteTitle === "" || (note.content.blocks.length <= 1 && note.content.blocks[0].depth === 0 && note.content.blocks[0].text === "")) {
@@ -84,7 +93,7 @@ class PageContainer extends React.Component {
           this.setState({
             noteTitle: "",
             editorState: EditorState.createEmpty()
-          }, () => displayedNote === "new" ? this.props.crearNota(note.title, note.content) : this.props.updateNote(displayedNote._id, note.title, note.content))
+          }, () => displayedNote === this.props.crearNota(note.title, note.content));
         }
     }
 
