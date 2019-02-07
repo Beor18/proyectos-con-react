@@ -12,6 +12,7 @@ const nota = (state = { hotels: [], displayedNote: null}, action) => {
         return state;
 
         case CREAR_NOTA:
+        console.log(action.nuevoHotel)
             let nuevoHotel = action.nuevoHotel
             let oldState = state.hotels.slice(0)
             state = Object.assign({},
