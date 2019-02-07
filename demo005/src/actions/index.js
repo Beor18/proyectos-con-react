@@ -29,7 +29,7 @@ export function crearNota(noteTitle, noteContent) {
         .then(json => {
             dispatch({
                 type: CREAR_NOTA,
-                p: json
+                nuevoHotel: json
             })
         })
     }
