@@ -1,8 +1,5 @@
 html {
     background: #fff;
-    height: 100%;
-    position: relative;
-    width: 100%;
 }
 
 button {
@@ -108,43 +105,13 @@ select {
     color: white;
 }
 
-.note-list-header {
-    font-size: 20px;
-    text-align: center;
-    padding: 1.5em 1em;
-    margin: 0.75em;
-    color: #585656;
-    position: sticky;
-    top: 0;
-    align-items: center
+.grid-cards {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    margin-top: 20px !important;
+    width: 100% !important;
 }
 
-.note-list {
-    position: relative;
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: 184px;
-    margin: 0.5em 0 0.5em 0.5em;
-}
-
-.note-list-item {
-    padding: 1.1em;
-    font-size: 13px;
-    letter-spacing: .5px;
-    border-bottom: #f5efef solid 1px;
-    min-height: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    color: #484545;
-}
-
-.note-list-item:hover {
-    background: #FBF1F1;
-}
-
-.tituloNotas {
-    text-align: center;
-    border-bottom: 2px solid #000000;
-    padding: 10px;
+.titulo-card {
+    text-overflow: ellipsis;
 }
