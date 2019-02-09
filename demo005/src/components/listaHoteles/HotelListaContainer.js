@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as Actions from '../../actions';
 import HotelListaItem from './HotelListaItem'
+import Grid from '@material-ui/core/Grid';
 
 class HotelListaContainer extends React.Component {
 
@@ -19,15 +20,15 @@ class HotelListaContainer extends React.Component {
     listAllNotes = () => {
       console.log(this.props.nota);
       return this.props.nota.sort((a,b) => parseInt(a.id) - parseInt(b.id)).map((lista, index) => {
-        return <HotelListaItem key={index} lista={lista}/>
+        return <Grid item md={3} key={index} lista={lista}><HotelListaItem key={index} lista={lista}/></Grid>
       })
     }
   
     render() {
         return (
-            <div className="note-list">
-                {this.listAllNotes()}
-            </div>
+              <Grid container className="grid-cards" spacing={24} >
+                  {this.listAllNotes()}
+              </Grid>
         )}
 }
 
