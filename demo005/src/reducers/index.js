@@ -23,8 +23,8 @@ const nota = (state = { hotels: [], displayedNote: null}, action) => {
             )
         return state;
 
-        default:
-        return state;
+    default:
+    return state;
     }
 };
 

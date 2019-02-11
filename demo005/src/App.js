@@ -7,6 +7,7 @@ import * as Actions from '../src/actions'
 
 import PageContainer from './components/PageContainer';
 import HotelListaContainer from './components/listaHoteles/HotelListaContainer';
+import Navbar from './components/navbar/Navbar';
 
 class App extends Component {
 
@@ -36,6 +37,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+				<Navbar/>
 				<HotelListaContainer />
         <PageContainer displayedNote={this.state.displayedNote} />
       </div>
