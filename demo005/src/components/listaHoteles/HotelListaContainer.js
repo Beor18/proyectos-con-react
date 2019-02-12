@@ -20,13 +20,13 @@ class HotelListaContainer extends React.Component {
     listAllNotes = () => {
       console.log(this.props.nota);
       return this.props.nota.sort((a,b) => parseInt(a.id) - parseInt(b.id)).map((lista, index) => {
-        return <Grid item md={3} key={index} lista={lista}><HotelListaItem key={index} lista={lista}/></Grid>
+        return <Grid item md={3} xs={12} key={index} lista={lista}><HotelListaItem key={index} lista={lista}/></Grid>
       })
     }
   
     render() {
         return (
-              <Grid container className="grid-cards" spacing={24} >
+              <Grid container item md={12} className="grid-cards" spacing={24} >
                   {this.listAllNotes()}
               </Grid>
         )}

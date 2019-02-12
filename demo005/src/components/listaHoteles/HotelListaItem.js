@@ -44,7 +44,7 @@ class HotelListaItem extends React.Component {
               title="Contemplative Reptile"
               style={{height: 140}}
             />
-            <CardContent>
+            <CardContent className="card-content-fondo">
               <Typography className="titulo-card" gutterBottom variant="h5" component="h2">
                 {this.props.lista.title}
               </Typography>
