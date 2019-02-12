@@ -62,10 +62,12 @@ select {
     height: 2.25em;
 }
 
-button,
-select {
-    background-image: linear-gradient(to bottom, #fdfbfb 0%, #ebedee 100%);
-    padding: 3px;
+.submitNote {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    margin-left: 20px !important;
+    width: 130px !important;
+    margin-bottom: 20px !important;
 }
 
 .styleButton#bold {
@@ -114,4 +116,18 @@ select {
 
 .titulo-card {
     text-overflow: ellipsis;
+    color: #fff !important;
+}
+
+.card-content-fondo {
+    background: #607d8b !important;
+}
+
+header {
+    background: #0d47a1 !important;
+}
+
+.formulario {
+    margin-top: -15px !important;
+    padding-bottom: 20px !important;
 }
