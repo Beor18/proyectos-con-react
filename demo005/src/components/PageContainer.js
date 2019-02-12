@@ -8,6 +8,11 @@ import { connect } from 'react-redux';
 import * as Actions from '../actions'
 
 import BlockStyleToolbar, { getBlockStyle } from "./blockStyles/BlockStyleToolbar";
+import Button from '@material-ui/core/Button';
+
+import FormControl from '@material-ui/core/FormControl';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
 
 const highlightPlugin = createHighlightPlugin();
 
@@ -110,12 +115,14 @@ class PageContainer extends React.Component {
             <div className="editorContainer">
 
             <div className="aboveEditor">
-                <span className="noteTitle">
-                    <input type="text" placeholder="Nombre del Hotel" name="noteTitle" className="noteTitle" value={this.state.noteTitle} onChange={this.captureTitle}/>
-                </span>
-                <button className="submitNote" onClick={this.submitEditor}>
+
+                <FormControl className="formulario">
+                    <InputLabel htmlFor="component-simple">Título</InputLabel>
+                    <Input id="component-simple" name="noteTitle" value={this.state.noteTitle} onChange={this.captureTitle} />
+                </FormControl>
+                <Button variant="contained" color="secondary" className="submitNote" onClick={this.submitEditor}>
                         Guardar
-                </button>
+                </Button>
             </div>
 
                 <BlockStyleToolbar
