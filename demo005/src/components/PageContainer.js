@@ -20,6 +20,7 @@ class PageContainer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            noteTitle: '',
             editorState: EditorState.createEmpty(),
         };
 
@@ -68,7 +69,7 @@ class PageContainer extends React.Component {
           //let rawContentFromFile = displayedNote
           this.setState({
             displayedNote: this.props.nota._id,
-            editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.displayedNote.content)), this.decorator())
+            editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.nota.content)), this.decorator())
           })
         } else {
           this.setState({
@@ -110,10 +111,15 @@ class PageContainer extends React.Component {
         })
     }
 
+    // Pasar a JSON el contenido
+    handleClick = () => {
+        console.log(convertFromRaw(JSON.parse(this.props.nota[1].content)));
+    }
+
     render() {
         return (
             <div className="editorContainer">
-
+            <button onClick={this.handleClick}> Log State </button>
             <div className="aboveEditor">
 
                 <FormControl className="formulario">
