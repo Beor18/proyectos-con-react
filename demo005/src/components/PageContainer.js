@@ -113,13 +113,13 @@ class PageContainer extends React.Component {
 
     // Pasar a JSON el contenido
     handleClick = () => {
+        console.log('Ejemplo convertir a json el contenido: ');
         console.log(convertFromRaw(JSON.parse(this.props.nota[1].content)));
     }
 
     render() {
         return (
             <div className="editorContainer">
-            <button onClick={this.handleClick}> Log State </button>
             <div className="aboveEditor">
 
                 <FormControl className="formulario">
@@ -128,6 +128,9 @@ class PageContainer extends React.Component {
                 </FormControl>
                 <Button variant="contained" color="secondary" className="submitNote" onClick={this.submitEditor}>
                         Guardar
+                </Button>
+                <Button variant="contained" color="primary" className="log" onClick={this.handleClick}>
+                        Log State
                 </Button>
             </div>
 

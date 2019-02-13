@@ -38,8 +38,8 @@ class App extends Component {
     return (
       <div className="App">
 				<Navbar/>
+				<PageContainer displayedNote={this.state.displayedNote} />
 				<HotelListaContainer />
-        <PageContainer displayedNote={this.state.displayedNote} />
       </div>
     );
   }
