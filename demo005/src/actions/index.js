@@ -2,20 +2,23 @@ export const CARGAR_NOTA = "CARGAR_NOTA";
 export const ACTUALIZAR_NOTA = "ACTUALIZAR_NOTA";
 export const CREAR_NOTA = "CREAR_NOTA";
 
+const URL_BASE = 'http://localhost:5000/api/';
+
 export function cargarNota() {
     return dispatch => {
-        fetch("http://localhost:5000/api/productos")
+        fetch(URL_BASE + 'productos')
         .then(response => response.json())
         .then(json => dispatch({
             type: CARGAR_NOTA, 
             payload: json.p
         })
-    )}
+        ).catch(error => console.error(error));
+    }
 }
 
 export function crearNota(noteTitle, noteContent) {
     return dispatch => {
-        fetch("http://localhost:5000/api/productos", {
+        fetch(URL_BASE + 'productos', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
@@ -31,6 +34,6 @@ export function crearNota(noteTitle, noteContent) {
                 type: CREAR_NOTA,
                 nuevoHotel: json
             })
-        })
+        }).catch(error => console.error(error));
     }
 }
