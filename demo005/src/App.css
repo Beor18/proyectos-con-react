@@ -30,8 +30,10 @@ button.underline {
 }
 
 .editorContainer {
-    padding: 1em;
-    margin: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 40px;
+    padding-bottom: 40px;
     text-align: center;
 }
 
@@ -41,7 +43,7 @@ button.underline {
     padding: 2em;
     border-radius: 8px;
     border: 1px solid #000000;
-    margin: 2em;
+    margin: 20px 0px 0px 0px;
     font-family: "Open Sans";
     font-size: 100%;
     background-image: linear-gradient(to bottom, #fdfbfb 0%, #f6f7fb 100%);
@@ -130,4 +132,12 @@ header {
 .formulario {
     margin-top: -15px !important;
     padding-bottom: 20px !important;
+}
+
+.log {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    margin-left: 10px !important;
+    width: 130px !important;
+    margin-bottom: 20px !important;
 }
