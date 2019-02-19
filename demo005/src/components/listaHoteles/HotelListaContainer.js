@@ -7,29 +7,33 @@ import Grid from '@material-ui/core/Grid';
 
 class HotelListaContainer extends React.Component {
 
-    componentDidMount() {
-        this.props.cargarNota()
-      }
+  componentDidMount() {
+    this.props.cargarNota()
+  }
 
-      componentDidUpdate(prevProps, prevState) {
-        if (prevProps !== this.props) {
-          this.listAllNotes();
-        }
-      }
-  
-    listAllNotes = () => {
-      console.log(this.props.nota);
-      return this.props.nota.sort((a,b) => parseInt(a.id) - parseInt(b.id)).map((lista, index) => {
-        return <Grid item md={3} xs={12} key={index} lista={lista}><HotelListaItem key={index} lista={lista}/></Grid>
-      })
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps !== this.props) {
+      return this.listAllNotes()
     }
+  }
+
+  listAllNotes = () => {
+    return this.props.nota.sort((a,b) => parseInt(a.id) - parseInt(b.id)).map((lista, index) => {
+      return <Grid item md={3} xs={12} key={index} lista={lista}><HotelListaItem key={index} lista={lista}/></Grid>
+    })
+  }
   
-    render() {
-        return (
-              <Grid container item md={12} className="grid-cards" spacing={24} >
-                  {this.listAllNotes()}
-              </Grid>
-        )}
+  render() {
+    if (this.props.nota.length > 0) {
+      return (
+        <Grid container item md={12} className="grid-cards" spacing={24} >
+          {this.listAllNotes()}
+        </Grid>
+      )}else{
+        return(
+          <div>No hay nada!</div>
+        )
+      }}
 }
 
 
