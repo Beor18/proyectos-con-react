@@ -68,8 +68,8 @@ class PageContainer extends React.Component {
         if (typeof displayedNote == "object") {
           //let rawContentFromFile = displayedNote
           this.setState({
-            displayedNote: this.props.nota._id,
-            editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.nota.content)), this.decorator())
+            displayedNote: this.props.nota.p._id,
+            editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(this.note.content)), this.decorator())
           })
         } else {
           this.setState({
@@ -83,7 +83,7 @@ class PageContainer extends React.Component {
         if (prevProps.nota == null && !!this.props.nota) {
          this.setState({
           displayedNote: this.props.nota._id,
-          editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.nota.content)))
+          eeditorState: EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.nota.content)))
          })
         }
     }
