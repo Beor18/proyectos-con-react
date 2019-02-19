@@ -95,11 +95,14 @@ class PageContainer extends React.Component {
         if (this.state.noteTitle === "" || (note.content.blocks.length <= 1 && note.content.blocks[0].depth === 0 && note.content.blocks[0].text === "")) {
           alert("El titulo o el cuerpo no tiene que estar en blanco!")
         } else {
-          note["content"] = JSON.stringify(note.content)
-          this.setState({
-            noteTitle: "",
-            editorState: EditorState.createEmpty()
-          }, () => displayedNote === this.props.crearNota(note.title, note.content));
+            // Hasta ahora la unica solucion
+            let c = JSON.stringify(note.content);
+            let e = convertFromRaw(JSON.parse(c));
+            note["content"] = EditorState.createWithContent(e);
+            this.setState({
+                noteTitle: "",
+                editorState: EditorState.createEmpty()
+            }, () => displayedNote === this.props.crearNota(note.title, note.content));
         }
     }
 
