@@ -114,12 +114,6 @@ class PageContainer extends React.Component {
         })
     }
 
-    // Pasar a JSON el contenido
-    handleClick = () => {
-        console.log('Ejemplo convertir a json el contenido: ');
-        console.log(convertFromRaw(JSON.parse(this.props.nota[1].content)));
-    }
-
     render() {
         return (
             <div className="editorContainer">
