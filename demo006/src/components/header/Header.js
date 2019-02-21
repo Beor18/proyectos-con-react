@@ -4,7 +4,15 @@ import { withStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faNodeJs, faAngular, faReact, faPython, faPhoenixFramework } from '@fortawesome/free-brands-svg-icons'
+import { 
+  faGithub, 
+  faNodeJs, 
+  faAngular, 
+  faReact, 
+  faPython, 
+  faPhoenixFramework,
+  faJs
+} from '@fortawesome/free-brands-svg-icons'
 
 const styles = {
   divGeneral: {
@@ -58,13 +66,16 @@ function Header(props) {
             <FontAwesomeIcon icon={faNodeJs} size="lg" className={classes.iconos} />
             <FontAwesomeIcon icon={faAngular} size="lg" className={classes.iconos} />
             <FontAwesomeIcon icon={faReact} size="lg" className={classes.iconos} />
+            <FontAwesomeIcon icon={faJs} size="lg" className={classes.iconos} />
+            <FontAwesomeIcon icon={faPhoenixFramework} size="lg" className={classes.iconos} />
+            <FontAwesomeIcon icon={faPython} size="lg" className={classes.iconos} />
           </a>
         </Grid>
     </div>
   );
 }
 
-Headers.propTypes = {
+Header.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
