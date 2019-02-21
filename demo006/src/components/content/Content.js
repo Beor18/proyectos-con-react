@@ -8,18 +8,20 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 //import ListSubheader from '@material-ui/core/ListSubheader';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { 
+  faNodeJs, 
+  faAngular, 
+  faReact,
+  faPhoenixFramework
+} from '@fortawesome/free-brands-svg-icons'
+
 const styles = {
   divGeneral: {
-    background: '#ffff',
+    background: '#efefef',
     color: "#000",
     paddingTop: 40,
     paddingBottom: 40
-  },
-  iconos: {
-    marginTop: 20,
-    marginRight: 10,
-    color: '#fff',
-    fontSize: 30
   },
   heading: {
     marginTop: 20,
@@ -28,10 +30,11 @@ const styles = {
   portFolio: {
       padding: 40,
       marginTop: 20,
-      textShadow: '0px 0px 10px #000'
+      textShadow: '0px 0px 8px #000'
   },
-  lista: {
-    border: '1px solid #000'
+  tituloProyecto: {
+      fontSize: 23,
+      color: '#fff'
   }
 };
 
@@ -39,12 +42,13 @@ const tileData = [
     {
         img: 'https://camo.githubusercontent.com/ef22cc754d2a3886dd5dc404f3f3dde97126c247/68747470733a2f2f692e696d6775722e636f6d2f4b6d68723474462e706e67',
         title: 'Login con Elixir y Phoenix Framework',
-        author: 'author',
+        stackUno: <FontAwesomeIcon icon={faPhoenixFramework} className="phoenix"/>,
     },
     {
-        img: 'https://camo.githubusercontent.com/eccdab36b6c7709036f7f2d7815738eac2041561/68747470733a2f2f692e696d6775722e636f6d2f616d31596e377a2e706e67',
+        img: 'https://i.imgur.com/9esjpn1.jpg',
         title: 'Desafio almundo.com',
-        author: 'author',
+        stackUno: <FontAwesomeIcon icon={faNodeJs} className="nodejs stack"/>,
+        stackDos: <FontAwesomeIcon icon={faAngular} className="angular stack"/>
     }
  ];
 
@@ -60,9 +64,9 @@ function Content(props) {
             
                 {tileData.map(tile => (
                 <GridListTile key={tile.img}>
-                    <img src={tile.img} alt={tile.title} />
+                    <img src={tile.img} alt={tile.title}/>
                     <GridListTileBar
-                        title={<h2>{tile.title}</h2>}
+                        title={<h2 className={classes.tituloProyecto}>{tile.title} {tile.stackUno} {tile.stackDos}</h2>}
                     />
                 </GridListTile>
                 ))}
