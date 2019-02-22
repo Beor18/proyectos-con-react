@@ -92,8 +92,8 @@ function Content(props) {
                             title="Contemplative Reptile"
                             />
                             <CardContent className={classes.borde}>
-                                <Typography gutterBottom variant="h5" component="h2" className={classes.tituloProyecto}>
-                                    {tile.title} {tile.stackUno} {tile.stackDos}
+                                <Typography variant="h5" component="h2" className={classes.tituloProyecto}>
+                                    {tile.title} <span className="iconos">{tile.stackUno} {tile.stackDos}</span>
                                 </Typography>
                             </CardContent>
                         </CardActionArea>

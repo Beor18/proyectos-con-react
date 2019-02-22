@@ -17,3 +17,8 @@
 .react {
     color: #61dafb;
 }
+
+.iconos {
+    padding: 0 3px !important;
+    margin-top: 3px !important;
+}
