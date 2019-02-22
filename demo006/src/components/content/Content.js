@@ -14,7 +14,9 @@ import Typography from '@material-ui/core/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
   faNodeJs, 
-  faAngular
+  faAngular,
+  faPhoenixFramework,
+  faReact
 } from '@fortawesome/free-brands-svg-icons'
 
 const styles = {
@@ -34,25 +36,22 @@ const styles = {
       textShadow: '0px 0px 8px #000'
   },
   tituloProyecto: {
-      fontSize: 23,
+      fontSize: 20,
       color: '#000'
   },
   card: {
       marginTop: 25
+  },
+  borde: {
+      border: '1px solid #ccc'
   }
 };
 
 const tileData = [
-    // {
-    //     img: 'https://camo.githubusercontent.com/ef22cc754d2a3886dd5dc404f3f3dde97126c247/68747470733a2f2f692e696d6775722e636f6d2f4b6d68723474462e706e67',
-    //     title: 'Login con Elixir y Phoenix Framework',
-    //     stackUno: <FontAwesomeIcon icon={faPhoenixFramework} className="phoenix"/>,
-    // },
     {
-        img: 'https://i.imgur.com/9esjpn1.jpg',
-        title: 'Desafio almundo.com',
-        stackUno: <FontAwesomeIcon icon={faNodeJs} className="nodejs stack"/>,
-        stackDos: <FontAwesomeIcon icon={faAngular} className="angular stack"/>
+        img: 'https://i.imgur.com/x0pgu7c.jpg',
+        title: 'Login con Elixir y Phoenix Framework',
+        stackUno: <FontAwesomeIcon icon={faPhoenixFramework} className="phoenix"/>,
     },
     {
         img: 'https://i.imgur.com/9esjpn1.jpg',
@@ -61,16 +60,14 @@ const tileData = [
         stackDos: <FontAwesomeIcon icon={faAngular} className="angular stack"/>
     },
     {
-        img: 'https://i.imgur.com/9esjpn1.jpg',
-        title: 'Desafio almundo.com',
-        stackUno: <FontAwesomeIcon icon={faNodeJs} className="nodejs stack"/>,
-        stackDos: <FontAwesomeIcon icon={faAngular} className="angular stack"/>
+        img: 'https://i.imgur.com/QgyTTio.jpg',
+        title: 'Jwt Elixir - Frontend realizado con React',
+        stackUno: <FontAwesomeIcon icon={faReact} className="react stack"/>
     },
     {
-        img: 'https://i.imgur.com/9esjpn1.jpg',
-        title: 'Desafio almundo.com',
-        stackUno: <FontAwesomeIcon icon={faNodeJs} className="nodejs stack"/>,
-        stackDos: <FontAwesomeIcon icon={faAngular} className="angular stack"/>
+        img: 'https://i.imgur.com/vetMel5.jpg',
+        title: 'Proyectos con Angular',
+        stackUno: <FontAwesomeIcon icon={faAngular} className="angular stack"/>
     }
  ];
 
@@ -94,7 +91,7 @@ function Content(props) {
                             image={tile.img}
                             title="Contemplative Reptile"
                             />
-                            <CardContent>
+                            <CardContent className={classes.borde}>
                                 <Typography gutterBottom variant="h5" component="h2" className={classes.tituloProyecto}>
                                     {tile.title} {tile.stackUno} {tile.stackDos}
                                 </Typography>
