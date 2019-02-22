@@ -50,17 +50,17 @@ function Header(props) {
   const { classes } = props;
   return (
     <div className={classes.divGeneral}>
-        <Grid container item md={12} direction="row" justify="center" alignItems="center">
+        <Grid container item xs={12} sm={12} lg={12} direction="row" justify="center" alignItems="center">
         <Avatar alt="Fernando Lopez" src="https://scontent.faep5-1.fna.fbcdn.net/v/t1.0-1/p160x160/46990143_10215645184434995_1980031029271855104_n.jpg?_nc_cat=107&_nc_ht=scontent.faep5-1.fna&oh=25e1ad9a1e86b9e8ba240bb45aba899e&oe=5CF3C03A" className={classes.bigAvatar} />
         </Grid>
-        <Grid container item md={12} direction="column" justify="center" alignItems="center">
+        <Grid container item xs={12} sm={12} lg={12} direction="column" justify="center" alignItems="center">
             <h1 className={classes.heading}>Fernando López</h1>
             <h3 className={classes.heading}>Fullstack Developer </h3>
             <p className={classes.textoObjetivo}>
                 Poder crecer profesionalmente. Autodidacta y colaborativo, nunca dejo de aprender. Padre de 2 hijos.
             </p>
         </Grid>
-        <Grid container item md={12} justify="center" alignItems="center">
+        <Grid container item xs={12} sm={12} lg={12} justify="center" alignItems="center">
           <a href="https://www.github.com/Beor18">
             <FontAwesomeIcon icon={faGithub} size="lg" className={classes.iconos} />
             <FontAwesomeIcon icon={faNodeJs} size="lg" className={classes.iconos} />
