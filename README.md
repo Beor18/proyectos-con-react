@@ -9,3 +9,5 @@
 - [Demo04](https://github.com/Beor18/proyectos-con-react/tree/master/demo004) - Probando Material UI
 
 - [Demo05](https://github.com/Beor18/proyectos-con-react/tree/master/demo005) - Texto Enriquecido con Draft.js
+
+- [Demo06](https://github.com/Beor18/proyectos-con-react/tree/master/demo006) - Portfolio Personal
