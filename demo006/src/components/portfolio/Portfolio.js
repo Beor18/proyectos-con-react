@@ -67,6 +67,17 @@ const tileData = [
     {
         img: 'https://i.imgur.com/vetMel5.jpg',
         title: 'Proyectos con Angular',
+        stackUno: <FontAwesomeIcon icon={faNodeJs} className="nodejs stack"/>,
+        stackDos: <FontAwesomeIcon icon={faAngular} className="angular stack"/>
+    },
+    {
+        img: 'https://i.imgur.com/SdAJswX.jpg',
+        title: 'Proyectos con React',
+        stackUno: <FontAwesomeIcon icon={faReact} className="react stack"/>
+    },
+    {
+        img: 'https://i.imgur.com/Y6kKfRg.jpg',
+        title: 'Login y Firebase database',
         stackUno: <FontAwesomeIcon icon={faAngular} className="angular stack"/>
     }
  ];
