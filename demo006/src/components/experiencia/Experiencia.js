@@ -66,7 +66,7 @@ function Experiencia(props) {
                     <Typography component="h3" className={classes.puesto}>
                         DESARROLLADOR WEB
                     </Typography>
-                    <Typography variant="h3" component="h3" className={classes.lugar}>
+                    <Typography variant="h5" component="h5" className={classes.lugar}>
                         Flybynet - <small className={classes.small}>Desde Abril 2017 - Actualidad</small>
                     </Typography>
                      <Typography component="p">
@@ -86,7 +86,7 @@ function Experiencia(props) {
                     <Typography variant="h3" component="h3" className={classes.puesto}>
                     FREELANCE SOFTWARE DEVELOPER
                     </Typography>
-                    <Typography variant="h5" component="h3" className={classes.lugar}>
+                    <Typography variant="h5" component="h5" className={classes.lugar}>
                         Freelance - <small className={classes.small}>Desde Mayo 2014 - Actualidad</small>
                     </Typography>
                     <Typography component="p">
@@ -108,7 +108,7 @@ function Experiencia(props) {
                     <Typography variant="h3" component="h3" className={classes.puesto}>
                         DESARROLLADOR WEB
                     </Typography>
-                    <Typography variant="h5" component="h3" className={classes.lugar}>
+                    <Typography variant="h5" component="h5" className={classes.lugar}>
                         Conectar Igualdad - <small className={classes.small}>Desde Abril 2014 - Abril 2016</small>
                     </Typography>
                      <Typography component="p">
@@ -127,7 +127,7 @@ function Experiencia(props) {
                     <Typography variant="h3" component="h3" className={classes.puesto}>
                         MAQUETADOR WEB
                     </Typography>
-                    <Typography variant="h5" component="h3" className={classes.lugar}>
+                    <Typography variant="h5" component="h5" className={classes.lugar}>
                         Frontaly - <small className={classes.small}>Desde Enero 2014 - Abril 2014</small>
                     </Typography>
                      <Typography component="p">
