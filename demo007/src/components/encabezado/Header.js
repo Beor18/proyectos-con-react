@@ -9,8 +9,8 @@ const Header = props => {
                 {branding}
             </a>
             <ul className="navbar-nav mr-auto-right" alt="fireSpot">
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <ul className="navbar-nav mr-auto">
+                <li className="nav-item active">
                     <img src={"fclogo.svg"} width="145" alt="" />
                 </li>
                 </ul>
@@ -21,7 +21,7 @@ const Header = props => {
 };
 
 Header.defaultProps = {
-    branding: "Un Texto encabezado"
+    branding: "Estadisticas con React"
 };
 
 export default Header;
