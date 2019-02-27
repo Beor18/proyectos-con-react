@@ -1,33 +1,63 @@
-.App {
-  text-align: center;
+body {
+    background-color: #f7f7f7 !important;
+    font-family: 'Lato', sans-serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+    background-color: #3949ab !important;
+    box-shadow: 0 8px 14px 0 rgba(123, 120, 120, 0.22);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar-brand {
+    color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-brand:hover {
+    color: rgba(255, 255, 255, 0.8);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.font-weight-700 {
+    font-weight: 700;
+}
+
+.custom-card {
+    border: 0;
+    box-shadow: 0px 2px 4px #bdbdbd73;
+}
+
+.card-body img {
+    width: 25px;
+    opacity: 0.2;
+}
+
+.card-deck>.card:nth-child(2) .card-body>img {
+    width: 20px;
+}
+
+@media (min-width:576px) {
+    .custom-card-deck .card:last-child {
+        margin-right: 15px !important;
+    }
+}
+
+@media (max-width:768px) {
+    .navbar-brand {
+        width: 100%;
+        text-align: center;
+        font-size: 1.1rem;
+        white-space: normal;
+    }
+}
+
+@media (max-width:575px) {
+    .mt-xs-4 {
+        margin-top: 2rem !important;
+    }
+    .mb-xs-4 {
+        margin-bottom: 2rem !important;
+    }
+}
+
+.text-primary {
+    color: #3949ab!important;
 }
