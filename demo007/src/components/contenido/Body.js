@@ -7,6 +7,11 @@ import ReactFC from 'react-fusioncharts';
 import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 
 class Body extends React.Component {
+    constructor(props) {
+        super(props);
+        this.BASE_URL = "https://cors.io/?https://api.cryptonator.com/api/ticker/";
+    }
+    
     componentDidMount() {
 
     }
