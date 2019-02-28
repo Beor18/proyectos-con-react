@@ -70,7 +70,7 @@ class Body extends React.Component {
                 let y_axis = d.cuantos;
                 this.chartRef.feedData("&label=" + x_axis + "&value=" + y_axis);
             });
-        }, 2000);
+        }, 5000);
     }
 
     getDataFor(hoteles, prop) {
