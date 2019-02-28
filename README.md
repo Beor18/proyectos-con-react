@@ -11,3 +11,5 @@
 - [Demo05](https://github.com/Beor18/proyectos-con-react/tree/master/demo005) - Texto Enriquecido con Draft.js
 
 - [Demo06](https://github.com/Beor18/proyectos-con-react/tree/master/demo006) - Portfolio Personal
+
+- [Demo07](https://github.com/Beor18/proyectos-con-react/tree/master/demo007) - Estadisticas con React
