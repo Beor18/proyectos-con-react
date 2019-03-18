@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
-import Collapsible from 'react-collapsible';
+import React from 'react';
+import Colapsable from '../components/Colapsable';
+import Ejemplo from '../components/Hooks';
 
-class Home extends Component {
-  render() {
+function Home() {
     return (
       <div>
-        <Collapsible>
-            Prueba Accordion
-        </Collapsible>
+        <Colapsable />
+        <Ejemplo />
       </div>
     );
-  }
 }
 
 export default Home;
