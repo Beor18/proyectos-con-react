@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Buscar = ({ search }) => {
-  const [searchValue, setSearchValue] = useState("");
+  const [stars, setSearchValue] = useState("");
 
   const handleSearchInputChanges = e => {
     setSearchValue(e.target.value);
@@ -13,18 +13,18 @@ const Buscar = ({ search }) => {
 
   const callSearchFunction = e => {
     e.preventDefault();
-    search(searchValue);
+    search(stars);
     resetInputField();
   };
 
   return (
     <form className="search">
       <input
-        value={searchValue}
+        value={stars}
         onChange={handleSearchInputChanges}
         type="text"
       />
-      <input onClick={callSearchFunction} type="submit" value="BUSCAR" />
+      <input onClick={callSearchFunction} type="submit" value="BUSCAR HOTELES" />
     </form>
   );
 };

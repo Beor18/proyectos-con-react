@@ -1,25 +1,25 @@
 const initialState = {
     loading: true,
-    movies: [],
+    hotels: [],
     errorMessage: null
 };
 
 const reducer = (state, action) => {
 
     switch (action.type) {
-      case "BUSCAR_PELICULA_REQUEST":
+      case "BUSCAR_HOTELES_REQUEST":
         return {
           ...state,
           loading: true,
           errorMessage: null
         };
-      case "BUSCAR_PELICULA_SUCCESS":
+      case "BUSCAR_HOTELES_SUCCESS":
         return {
           ...state,
           loading: false,
-          movies: action.payload
+          hotels: action.payload
         };
-      case "BUSCAR_PELICULA_FAILURE":
+      case "BUSCAR_HOTELES_FAILURE":
         return {
           ...state,
           loading: false,

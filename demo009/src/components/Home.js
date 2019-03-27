@@ -2,64 +2,64 @@ import React, {useReducer, useEffect} from 'react';
 import "./Styles.css";
 
 import {reducer, initialState} from '../Reducers/Reducer';
-import Pelicula from './Pelicula';
+import Hotel from './Hotel';
 import spinner from "../ajax-loader.gif";
 import Buscar from './Buscar';
 
-const MOVIE_API_URL = "https://www.omdbapi.com/?s=man&apikey=4a3b711b";
+const HOTELES_API_URL = "https://almundo-examen.herokuapp.com/api/hoteles";
 
 const Home = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
   
-    // El Hook de efecto el Hook useEffect equivale a componentDidMount, 
+    // El Hook de efecto useEffect equivale a componentDidMount, 
     // componentDidUpdate y componentWillUnmount combinados.
     useEffect(() => {
-      fetch(MOVIE_API_URL)
+      fetch(HOTELES_API_URL)
         .then(response => response.json())
         .then(jsonResponse => {
           dispatch({
-            type: "BUSCAR_PELICULA_SUCCESS",
-            payload: jsonResponse.Search
+            type: "BUSCAR_HOTELES_SUCCESS",
+            payload: jsonResponse.hotels
           });
         });
     }, []);
   
-    const search = searchValue => {
+    const search = stars => {
       dispatch({
-        type: "BUSCAR_PELICULA_REQUEST"
+        type: "BUSCAR_HOTELES_REQUEST"
       });
   
-      fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=4a3b711b`)
+      fetch(`https://almundo-examen.herokuapp.com/api/stars/${stars}`)
         .then(response => response.json())
         .then(jsonResponse => {
-          if (jsonResponse.Response === "True") {
+          if (jsonResponse.Response) {
             dispatch({
-              type: "BUSCAR_PELICULA_SUCCESS",
-              payload: jsonResponse.Search
+              type: "BUSCAR_HOTELES_SUCCESS",
+              payload: jsonResponse.stars
             });
           } else {
             dispatch({
-              type: "BUSCAR_PELICULA_FAILURE",
+              type: "BUSCAR_HOTELES_FAILURE",
               error: jsonResponse.Error
             });
           }
         });
     };
   
-    const { movies, errorMessage, loading } = state;
+    const { hotels, errorMessage, loading } = state;
   
     return (
       <div className="App">
         <Buscar search={search} />
-        <p className="App-intro">Compartiendo algunas películas</p>
-        <div className="movies">
+        <p className="App-intro">Lista de Hoteles</p>
+        <div className="hoteles-contenedor">
           {loading && !errorMessage ? (
             <img className="spinner" src={spinner} alt="Loading spinner" />
           ) : errorMessage ? (
-            <div className="errorMessage">{errorMessage}</div>
+            <div className="errorMessage">Error</div>
           ) : (
-            movies.map((movie, index) => (
-              <Pelicula key={`${index}-${movie.Title}`} movie={movie} />
+            hotels.map((hoteles, index) => (
+              <Hotel key={`${index}-${hoteles.name}`} hoteles={hoteles} />
             ))
           )}
         </div>

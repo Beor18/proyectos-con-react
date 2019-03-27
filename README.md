@@ -16,4 +16,4 @@
 
 - [Demo08](https://github.com/Beor18/proyectos-con-react/tree/master/demo008) - Varios temas
 
-- [Demo09](https://github.com/Beor18/proyectos-con-react/tree/master/demo009) - Buscador de Peliculas con Hooks
+- [Demo09](https://github.com/Beor18/proyectos-con-react/tree/master/demo009) - Buscador de Hoteles con Hooks
