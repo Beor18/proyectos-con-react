@@ -35,7 +35,7 @@ const Home = () => {
           if (jsonResponse.Response) {
             dispatch({
               type: "BUSCAR_HOTELES_SUCCESS",
-              payload: jsonResponse.stars
+              payload: jsonResponse
             });
           } else {
             dispatch({
