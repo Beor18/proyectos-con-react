@@ -48,6 +48,7 @@ const Home = () => {
   
     const { hotels, errorMessage, loading } = state;
   
+    // Se muestra loading y lista
     return (
       <div className="App">
         <Buscar search={search} />
