@@ -19,7 +19,7 @@ class Consumir extends Component {
     }
 
     componentDidMount() {
-        axios.get()
+        axios.get('http://remote.fizzmod.com/ajax.php')
         .then(response => {
             this.mensaje = response.data;
             console.log(this.mensaje);
@@ -33,8 +33,14 @@ class Consumir extends Component {
 
 
     render(){
+        const mensaje = this.state.mensaje;
         return(
-            <div></div>
+            <div onClick={this.handleClick}>
+                {this.state.clickMostrar ? 
+                    <img src="http://remote.fizzmod.com/TyQVKjcj4SXjSEWv/frontend/images/marcas.jpg" alt="" /> : 
+                    <p>{mensaje}</p> 
+                }
+            </div>
         )
     }
 
