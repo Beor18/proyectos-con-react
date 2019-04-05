@@ -32,15 +32,15 @@ const Home = () => {
       fetch(`https://almundo-examen.herokuapp.com/api/stars/${stars}`)
         .then(response => response.json())
         .then(jsonResponse => {
-          if (jsonResponse.Response) {
+          if (jsonResponse.hotels <= null) {
             dispatch({
-              type: "BUSCAR_HOTELES_SUCCESS",
-              payload: jsonResponse
+              type: "BUSCAR_HOTELES_FAILURE",
+              error: jsonResponse.mensaje
             });
           } else {
             dispatch({
-              type: "BUSCAR_HOTELES_FAILURE",
-              error: jsonResponse.Error
+              type: "BUSCAR_HOTELES_SUCCESS",
+              payload: jsonResponse.hotels
             });
           }
         });
@@ -51,13 +51,14 @@ const Home = () => {
     // Se muestra loading y lista
     return (
       <div className="App">
+        <h4>Buscar por numero de Estrellas (1 a 5)</h4>
         <Buscar search={search} />
         <p className="App-intro">Lista de Hoteles</p>
         <div className="hoteles-contenedor">
           {loading && !errorMessage ? (
             <img className="spinner" src={spinner} alt="Loading spinner" />
           ) : errorMessage ? (
-            <div className="errorMessage">Error</div>
+            <div className="errorMessage">{errorMessage}</div>
           ) : (
             hotels.map((hoteles, index) => (
               <Hotel key={`${index}-${hoteles.name}`} hoteles={hoteles} />

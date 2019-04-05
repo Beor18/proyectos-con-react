@@ -15,7 +15,11 @@ const Hotel = ({hoteles}) => {
                     src={image}
                 />
             </div>
-            <p>{hoteles.price}</p>
+            <p>$ {hoteles.price}</p>
+            <p>{hoteles.stars}</p>
+            {hoteles.amenities.map((hoteles, index) => (
+              <p key={index}>{hoteles}</p>
+            ))}
         </div>
     );
 };
