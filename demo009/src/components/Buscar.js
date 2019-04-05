@@ -22,7 +22,7 @@ const Buscar = ({ search }) => {
       <input
         value={stars}
         onChange={handleSearchInputChanges}
-        type="text"
+        type="number"
       />
       <input onClick={callSearchFunction} type="submit" value="BUSCAR HOTELES" />
     </form>
