@@ -23,16 +23,16 @@ const styles = {
   divGeneral: {
     background: '#efefef',
     color: "#000",
-    paddingTop: 40,
-    paddingBottom: 40
+    padding: 40
   },
   heading: {
     marginTop: 20,
     marginBottom: 0
   },
   portFolio: {
-      padding: 40,
       marginTop: 20,
+      paddingLeft: 10,
+      paddingRigth: 10,
       textShadow: '0px 0px 8px #000'
   },
   tituloProyecto: {
@@ -89,9 +89,9 @@ function Portfolio(props) {
         <Grid container item xs={12} sm={6} lg={12} direction="row" justify="center" alignItems="center">
             <h1 className={classes.heading}>PORTFOLIO</h1>
         </Grid>
-        <Grid container className={classes.portFolio} item xs={12} sm={6} lg={12} direction="row" justify="center" alignItems="center">
+        <Grid container className={classes.portFolio} item xs={12} sm={6} lg={12}>
             {tileData.map(tile => (
-                <Grid container item xs={12} sm={6} lg={6} spacing={16} key={tile.img} >
+                <Grid container item xs={12} sm={6} className={classes.portFolio} lg={6} key={tile.img} direction="row">
                     <Card className={classes.card}>
                         <CardActionArea>
                             <CardMedia
