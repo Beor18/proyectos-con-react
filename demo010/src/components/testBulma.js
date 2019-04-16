@@ -5,27 +5,14 @@ import "rbx/index.css";
 export class TestBulma extends React.Component {
   render() {
       return (
-        <Column.Group>
-            <Column>
+        <Column.Group multiline>
+           {[1, 2, 3, 4, 5, 6, 7, 8].map(i => (
+                <Column key={i} size="one-quarter">
                 <Notification color="primary" textAlign="centered">
-                    Primera Columna
+                    Columna {i}
                 </Notification>
-            </Column>
-            <Column>
-                <Notification color="primary" textAlign="centered">
-                    Segunda Columna
-                </Notification>
-            </Column>
-            <Column>
-                <Notification color="primary" textAlign="centered">
-                    Tercera Columna
-                </Notification>
-            </Column>
-            <Column>
-                <Notification color="primary" textAlign="centered">
-                    Cuarta Columna
-                </Notification>
-            </Column>
+                </Column>
+            ))}
         </Column.Group>
       )
   }
