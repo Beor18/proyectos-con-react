@@ -1,19 +1,23 @@
-import React from "react";
-import { Column, Notification } from "rbx";
+import React, {Component} from "react";
+import { Column, Notification, Container } from "rbx";
 import "rbx/index.css";
 
-export class TestBulma extends React.Component {
+const lista = [1,2,3,4,5,6,7,8];
+
+class TestBulma extends Component {
   render() {
       return (
-        <Column.Group multiline>
-           {[1, 2, 3, 4, 5, 6, 7, 8].map(i => (
-                <Column key={i} size="one-quarter">
-                <Notification color="primary" textAlign="centered">
-                    Columna {i}
-                </Notification>
-                </Column>
-            ))}
-        </Column.Group>
+        <Container>
+            <Column.Group multiline>
+            {lista.map(i => (
+                    <Column key={i} size="one-quarter">
+                    <Notification color="primary" textAlign="centered">
+                        Columna {i}
+                    </Notification>
+                    </Column>
+                ))}
+            </Column.Group>
+        </Container>
       )
   }
 }
