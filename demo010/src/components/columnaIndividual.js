@@ -11,7 +11,7 @@ class ColumnaIndividual extends Component {
                         <Container>
                             <Title>COLUMNA</Title>
                             <Title as="h2" subtitle>
-                                Esto es una prueba con Bulma UI
+                                Algo
                             </Title>
                         </Container>
                     </Hero.Body>
