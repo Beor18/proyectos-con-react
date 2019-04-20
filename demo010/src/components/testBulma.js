@@ -14,26 +14,8 @@ const lista = [
     },
 ];
 
-const ColumnaContenedor = (props) => {
-    return(
-        <div>
-            <h1>{props.id} </h1>
-            <h1>{props.nombre} </h1>
-        </div>
-    )
-}
-
 class TestBulma extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            id: 1,
-            nombre: 'Algo'
-        }
-    }
-
     render() {
-
         return (
             <Container>
                 <Column.Group multiline>
@@ -41,7 +23,6 @@ class TestBulma extends Component {
                         <Column key={i.id} size="one-quarter">
                             <Notification color="primary" textAlign="centered">
                                 <a href={i.id}>Columna {i.nombre}</a>
-                                <ColumnaContenedor id={this.state.id} nombre={this.state.nombre}/>
                             </Notification>
                         </Column>
                 ))}
