@@ -37,6 +37,16 @@ export class Autocompletar extends Component {
         });
     }
 
+    // Se hace click sobre la palabra encontrada y se rellena el input con esa palabra
+    onClick = e => {
+        this.setState({
+            sugerenciaActiva: 0,
+            sugerenciaFiltro: [],
+            mostrarSugerencias: false,
+            inputUser: e.currentTarget.innerText
+        });
+    }
+
     render() {
         // El componente Autocompletar presenta una entrada y una lista de sugerencias, 
         // todas están envueltas en un React.Fragment. Es un contenedor, al igual que div, 
