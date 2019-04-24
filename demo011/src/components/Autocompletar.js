@@ -68,7 +68,7 @@ export class Autocompletar extends Component {
         if(mostrarSugerencias && inputUser){
             if(sugerenciaFiltro.length) {
                 sugerenciasListaComponent = (
-                    <ul class="sugerencias">
+                    <ul className="sugerencias">
                         {sugerenciaFiltro.map((sugerencia, index) => {
                             return (
                                 <li key={sugerencia} onClick={onClick}>
