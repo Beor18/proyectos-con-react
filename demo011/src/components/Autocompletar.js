@@ -93,6 +93,7 @@ export class Autocompletar extends Component {
                     onChange={onChange}
                     onKeyDown={onKeyDown}
                     value={inputUser}
+                    placeholder="Buscar sugerencias..."
                 />
                 {sugerenciasListaComponent}
             </React.Fragment>
