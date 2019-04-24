@@ -3,10 +3,18 @@ import Autocompletar from './components/Autocompletar';
 
 class App extends Component {
   render() {
+    const lista = [
+      "Mama", 
+      "Papa", 
+      "Nodejs", 
+      "Azul", 
+      "Amarillo", 
+      "react"
+    ]
     return (
       <div className="App">
         <Autocompletar 
-          sugerencias={["Mama", "Papa", "Nodejs", "Azul", "Amarillo", "react"]}
+          sugerencias={lista}
         />
       </div>
     );
